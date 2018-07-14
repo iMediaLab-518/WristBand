@@ -10,7 +10,7 @@ server_socket=None
 
 #连接套接字服务子线程
 
-defserveSocket(sock,info):
+def serveSocket(sock,info):
 
     #开个死循环等待客户端发送信息
 
