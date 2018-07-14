@@ -148,7 +148,7 @@ def parse_events(sock, loop_count=100):
                 for i in range(0, num_reports):
 		
 		    if (DEBUG == True):
-			print ("-------------")
+                print ("-------------")
                     	#print "\tfullpacket: ", printpacket(pkt)
 		    	print ("\tUDID: ", printpacket(pkt[report_pkt_offset -22: report_pkt_offset - 6]))
 		    	print ("\tMAJOR: ", printpacket(pkt[report_pkt_offset -6: report_pkt_offset - 4]))
