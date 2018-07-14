@@ -12,7 +12,7 @@
 #         print ('[-] RFCOMM port :' +str(port)+' closed')
  
 # for port in range(1,30):
-#     rfcommCon('98:E9:2A:B9:XX:57',port)
+#     rfcommCon('CC:50:98:E9:2A:B9',port)
 
 
 
