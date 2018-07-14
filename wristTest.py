@@ -18,7 +18,8 @@ try:
             (mac, uuid, major, minor, txpower, rssi) = returnedList[0].split(',', 6)
             # CAMBIAR LA DIRECCION MAC
             # CC:50:98:E9:2A:B9
-            if mac == 'f5:fa:2f:53:fc:7a':
+            # f5:fa:2f:53:fc:7a
+            if mac == 'CC:50:98:E9:2A:B9':
                 print("get this device")
                 print(uuid)
                 measunit = uuid[22:24]
