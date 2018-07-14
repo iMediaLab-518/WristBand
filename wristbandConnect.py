@@ -14,6 +14,9 @@ measured_anterior = 0
 try:
     while True:
         returnedList = blescan.parse_events(sock, 1)
+        print("------------------")
+        print(returnedList)
+        print("------------------")
         if len(returnedList) > 0:
             (mac, uuid, major, minor, txpower, rssi) = returnedList[0].split(',', 6)
             # CAMBIAR LA DIRECCION MAC
