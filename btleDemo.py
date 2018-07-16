@@ -8,7 +8,7 @@ class NotifyDelegate(DefaultDelegate):
     def handleNotification(self,cHandle,data):
         print("notify from "+str(cHandle)+str(data)+"\n")
 
-dev=btle.Peripheral("50:65:83:94:28:02").withDelegate(NotifyDelegate())
+dev=btle.Peripheral("cc:50:98:e9:2a:b9").withDelegate(NotifyDelegate())
 
 time.sleep(0.5)
 
