@@ -17,14 +17,18 @@ try:
         # print("------------------")
         # print(returnedList)
         # print("------------------")
+        for returnedItem in returnedList:
+        	print("------------------")
+        	print(returnedItem)
+        	print("------------------")
         if len(returnedList) > 0:
             (mac, uuid, major, minor, txpower, rssi) = returnedList[0].split(',', 6)
             # CAMBIAR LA DIRECCION MAC
             # cc:50:98:e9:2a:b9
             # f5:fa:2f:53:fc:7a
             if mac == 'cc:50:98:e9:2a:b9':
-                print("get this device")
-                print(uuid)
+                # print("get this device")
+                # print(uuid)
                 measunit = uuid[22:24]
                 measured = int((uuid[26:28] + uuid[24:26]), 16) * 0.01
 
