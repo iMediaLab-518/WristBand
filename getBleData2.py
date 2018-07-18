@@ -60,9 +60,14 @@ if __name__ == '__main__':
     # write , set listen
     snd_content_str = """\\x01\\x00"""
     ble_conn.writeCharacteristic(handle, snd_content_str)
-    
+    print(handle)
     # wait notification  
     ble_conn.waitForNotifications(2.0)
     
     # disconnect 
     ble_disconnect()
+
+
+
+
+
