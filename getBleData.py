@@ -8,6 +8,9 @@ class ScanDelegate(DefaultDelegate):
             print( "Discovered device", dev.addr )
         elif isNewData: 
             print( "Received new data from", dev.addr)
+    
+    def handleNotification(self,cHandle,data):
+        print("notify from "+str(cHandle)+str(data)+"\n")
 
 scanner = Scanner().withDelegate(ScanDelegate()) 
 devices = scanner.scan(10.0)
