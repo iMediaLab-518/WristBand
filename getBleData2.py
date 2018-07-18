@@ -41,8 +41,8 @@ def ble_disconnect():
 
 
 if __name__ == '__main__':
-
-    ble_mac = "cc:50:98:e9:2a:b9"
+# cc:50:98:e9:2a:b9
+    ble_mac = "f5:fa:2f:53:fc:7a"
    
     # scan 
     scanner = btle.Scanner().withDelegate(MyDelegate(None))
