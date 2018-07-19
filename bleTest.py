@@ -1,7 +1,7 @@
 import binascii
 import struct
 import time
-from bluepy.bluepy.btle import UUID, Peripheral
+from bluepy.btle import UUID, Peripheral
  
 temp_uuid = UUID(0x2221)
  
