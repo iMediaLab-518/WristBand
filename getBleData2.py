@@ -71,19 +71,19 @@ if __name__ == '__main__':
 
         try:
             val = binascii.b2a_hex(ch.read())
-            print ("first step:",str(val))
+            print ("step one:",str(val))
         except:
             pass
 
         try:
             val = binascii.unhexlify(val)
-            print ("second step:",str(val))
+            print ("step two:",str(val))
         except:
             pass
 
         try:
             val = struct.unpack('f', val)[0]
-            print ("third step:",str(val))
+            print ("step three:",str(val))
         except:
             pass
 
@@ -101,19 +101,19 @@ if __name__ == '__main__':
 
         try:
             val = binascii.b2a_hex(ch.read())
-            print ("first step:",str(val))
+            print ("step one:",str(val))
         except:
             pass
 
         try:
             val = binascii.unhexlify(val)
-            print ("second step:",str(val))
+            print ("step two:",str(val))
         except:
             pass
 
         try:
             val = struct.unpack('f', val)[0]
-            print ("third step:",str(val))
+            print ("step three:",str(val))
         except:
             pass
 
@@ -126,25 +126,20 @@ if __name__ == '__main__':
             pass
 
         try:
-            ch = item
-        except:
-            pass
-
-        try:
             val = binascii.b2a_hex(ch.read())
-            print ("first step",str(val))
+            print ("step one:",str(val))
         except:
             pass
 
         try:
             val = binascii.unhexlify(val)
-            print ("second step",str(val))
+            print ("step two:",str(val))
         except:
             pass
 
         try:
             val = struct.unpack('f', val)[0]
-            print ("third step:",str(val))
+            print ("step three:",str(val))
         except:
             pass
     # ble_conn.writeCharacteristic(handle, snd_content_str)
