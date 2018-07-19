@@ -73,7 +73,7 @@ if __name__ == '__main__':
         # print (str(val) + "************")
 
         try:
-            ch = ble_conn.getCharacteristics(uuid=temp_uuid)
+            ch = item
         except:
             pass
 
