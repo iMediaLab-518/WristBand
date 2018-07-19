@@ -62,19 +62,27 @@ if __name__ == '__main__':
     for item in ble_conn.getServices():
         print("services:",item)
         print("------------------------")
-        for iitem in item:
-            print("item:",iitem)
+        try:
+            for iitem in item:
+                print("item:",iitem)
+        except:
+            pass
     for item in ble_conn.getCharacteristics():
         print("characteristics:",item)
         print("------------------------")
-        for iitem in item:
-            print("item:",iitem)
+        try:
+            for iitem in item:
+                print("item:",iitem)
+        except:
+            pass
     for item in ble_conn.getDescriptors():
         print("descriptors:",item)
         print("------------------------")
-        for iitem in item:
-            print("item:",iitem)
-
+        try:
+            for iitem in item:
+                print("item:",iitem)
+        except:
+            pass
     # ble_conn.writeCharacteristic(handle, snd_content_str)
     # wait notification  
     ble_conn.waitForNotifications(2.0)
