@@ -59,9 +59,12 @@ if __name__ == '__main__':
     ble_connect(ble_mac)
     # write , set listen
     snd_content_str = """\\x01\\x00"""
-    print(ble_conn.getServices())
-    print(ble_conn.getCharacteristics())
-    print(ble_conn.getDescriptors())
+    for item in ble_conn.getServices():
+        print("service:",item)
+    for item in ble_conn.getCharacteristics():
+        print("service:",item)
+    for item in ble_conn.getDescriptors():
+        print("service:",item)
 
     # ble_conn.writeCharacteristic(handle, snd_content_str)
     # wait notification  
