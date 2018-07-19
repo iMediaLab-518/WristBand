@@ -64,8 +64,7 @@ if __name__ == '__main__':
     for item in ble_conn.getServices():
         print("services:",item)
 
-    temp_uuid = btle.UUID(0x2221)
-    for item in ble_conn.getCharacteristics(uuid=temp_uuid):
+    for item in ble_conn.getCharacteristics():
         print("characteristics:",item)
         # val = binascii.b2a_hex(ch.read())
         # val = binascii.unhexlify(val)
