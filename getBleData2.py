@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/python
 
 from __future__ import print_function
@@ -43,8 +41,8 @@ def ble_disconnect():
 
 
 if __name__ == '__main__':
-# cc:50:98:e9:2a:b9
-    ble_mac = "f5:fa:2f:53:fc:7a"
+# 
+    ble_mac = "cc:50:98:e9:2a:b9"
    
     # scan 
     scanner = btle.Scanner().withDelegate(MyDelegate(None))
