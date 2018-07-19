@@ -60,11 +60,11 @@ if __name__ == '__main__':
     # write , set listen
     snd_content_str = """\\x01\\x00"""
     for item in ble_conn.getServices():
-        print("service:",item)
+        print("services:",item)
     for item in ble_conn.getCharacteristics():
-        print("service:",item)
+        print("characteristics:",item)
     for item in ble_conn.getDescriptors():
-        print("service:",item)
+        print("descriptors:",item)
 
     # ble_conn.writeCharacteristic(handle, snd_content_str)
     # wait notification  
