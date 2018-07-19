@@ -69,9 +69,9 @@ if __name__ == '__main__':
         # val = binascii.unhexlify(val)
         # val = struct.unpack('f', val)[0]
         # print (str(val) + "************")
-        
+        temp_uuid = btle.UUID(0x2221)
         try:
-            ch = ble_conn.getCharacteristics()
+            ch = ble_conn.getCharacteristics(uuid=temp_uuid)
         except:
             pass
 
