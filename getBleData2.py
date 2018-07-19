@@ -59,7 +59,7 @@ if __name__ == '__main__':
     ble_connect(ble_mac)
     # write , set listen
     snd_content_str = """\\x01\\x00"""
-    ble_conn.writeCharacteristic(handle, snd_content_str)
+    ble_conn.writeCharacteristic(btle.handle, snd_content_str)
     print(handle)
     # wait notification  
     ble_conn.waitForNotifications(2.0)
