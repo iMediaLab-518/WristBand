@@ -65,16 +65,34 @@ if __name__ == '__main__':
         print("services:",item)
     for item in ble_conn.getCharacteristics():
         print("characteristics:",item)
+        # val = binascii.b2a_hex(ch.read())
+        # val = binascii.unhexlify(val)
+        # val = struct.unpack('f', val)[0]
+        # print (str(val) + "************")
         
         try:
             ch = ble_conn.getCharacteristics()
-            val = binascii.b2a_hex(ch.read())
-            val = binascii.unhexlify(val)
-            val = struct.unpack('f', val)[0]
-            print (str(val) + "************")
         except:
             pass
-        
+
+        try:
+            val = binascii.b2a_hex(ch.read())
+            print (str(val) + "111111------111111")
+        except:
+            pass
+
+        try:
+            val = binascii.unhexlify(val)
+            print (str(val) + "222222------222222")
+        except:
+            pass
+
+        try:
+            val = struct.unpack('f', val)[0]
+            print (str(val) + "333333------333333")
+        except:
+            pass
+
     for item in ble_conn.getDescriptors():
         print("descriptors:",item)
     # ble_conn.writeCharacteristic(handle, snd_content_str)
