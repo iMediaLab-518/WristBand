@@ -64,6 +64,29 @@ if __name__ == '__main__':
     for item in ble_conn.getServices():
         print("services:",item)
 
+        try:
+            ch = item
+        except:
+            pass
+
+        try:
+            val = binascii.b2a_hex(ch.read())
+            print ("第一步",str(val))
+        except:
+            pass
+
+        try:
+            val = binascii.unhexlify(val)
+            print ("第二步",str(val))
+        except:
+            pass
+
+        try:
+            val = struct.unpack('f', val)[0]
+            print ("第三步",str(val))
+        except:
+            pass
+
     for item in ble_conn.getCharacteristics():
         print("characteristics:",item)
         # val = binascii.b2a_hex(ch.read())
@@ -78,24 +101,47 @@ if __name__ == '__main__':
 
         try:
             val = binascii.b2a_hex(ch.read())
-            print (str(val) + "111111------111111")
+            print ("第一步",str(val))
         except:
             pass
 
         try:
             val = binascii.unhexlify(val)
-            print (str(val) + "222222------222222")
+            print ("第二步",str(val))
         except:
             pass
 
         try:
             val = struct.unpack('f', val)[0]
-            print (str(val) + "333333------333333")
+            print ("第三步",str(val))
         except:
             pass
 
     for item in ble_conn.getDescriptors():
         print("descriptors:",item)
+
+        try:
+            ch = item
+        except:
+            pass
+
+        try:
+            val = binascii.b2a_hex(ch.read())
+            print ("第一步",str(val))
+        except:
+            pass
+
+        try:
+            val = binascii.unhexlify(val)
+            print ("第二步",str(val))
+        except:
+            pass
+
+        try:
+            val = struct.unpack('f', val)[0]
+            print ("第三步",str(val))
+        except:
+            pass
     # ble_conn.writeCharacteristic(handle, snd_content_str)
     # wait notification  
     ble_conn.waitForNotifications(2.0)
