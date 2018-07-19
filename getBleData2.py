@@ -63,13 +63,15 @@ if __name__ == '__main__':
     snd_content_str = """\\x01\\x00"""
     for item in ble_conn.getServices():
         print("services:",item)
-    for item in ble_conn.getCharacteristics():
+
+    temp_uuid = btle.UUID(0x2221)
+    for item in ble_conn.getCharacteristics(uuid=temp_uuid):
         print("characteristics:",item)
         # val = binascii.b2a_hex(ch.read())
         # val = binascii.unhexlify(val)
         # val = struct.unpack('f', val)[0]
         # print (str(val) + "************")
-        temp_uuid = btle.UUID(0x2221)
+
         try:
             ch = ble_conn.getCharacteristics(uuid=temp_uuid)
         except:
