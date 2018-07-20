@@ -6,7 +6,6 @@ import sys
 import binascii
 from bluepy import btle
 import os
-import binascii
 import struct
 
 ble_conn = None
@@ -69,6 +68,14 @@ if __name__ == '__main__':
             ch = item
         except:
             pass
+
+
+        try:
+            val = binascii.b2a_hex(item)
+            print ("step one:",str(val))
+        except:
+            pass
+
 
         try:
             val = binascii.b2a_hex(ch.read())
