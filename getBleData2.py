@@ -144,7 +144,7 @@ if __name__ == '__main__':
             pass
     # ble_conn.writeCharacteristic(handle, snd_content_str)
     # wait notification  
-    ble_conn.waitForNotifications(2.0)
+    ble_conn.waitForNotifications(20.0)
     
     # disconnect 
     ble_disconnect()
