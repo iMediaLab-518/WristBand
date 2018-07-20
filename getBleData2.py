@@ -69,14 +69,6 @@ if __name__ == '__main__':
         except:
             pass
 
-
-        try:
-            val = binascii.b2a_hex(item)
-            print ("step zeo:",str(val))
-        except:
-            pass
-
-
         try:
             val = binascii.b2a_hex(ch.read())
             print ("step one:",str(val))
@@ -107,13 +99,6 @@ if __name__ == '__main__':
         except:
             pass
 
-
-        try:
-            val = binascii.b2a_hex(item)
-            print ("step zeo:",str(val))
-        except:
-            pass
-
         try:
             val = binascii.b2a_hex(ch.read())
             print ("step one:",str(val))
@@ -137,14 +122,6 @@ if __name__ == '__main__':
 
         try:
             ch = item
-        except:
-            pass
-
-
-            
-        try:
-            val = binascii.b2a_hex(item)
-            print ("step zeo:",str(val))
         except:
             pass
 
