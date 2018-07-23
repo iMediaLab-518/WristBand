@@ -60,8 +60,7 @@ if __name__ == '__main__':
     # connect  
     ble_connect(ble_mac)
     # write , set listen
-    snd_content_str = """\\x01\\x00"""
-    for item in ble_conn.getServices("BE9400017333BE46B7AE689E71722BD5"):
+    for item in ble_conn.getServiceByUUID( uuidVal = "BE9400017333BE46B7AE689E71722BD5"):
         print("services:",item)
 
         try:
@@ -87,12 +86,8 @@ if __name__ == '__main__':
         except:
             pass
 
-    for item in ble_conn.getCharacteristics("BE9400017333BE46B7AE689E71722BD5"):
+    for item in ble_conn.getCharacteristics(uuid = "BE9400017333BE46B7AE689E71722BD5"):
         print("characteristics:",item)
-        # val = binascii.b2a_hex(ch.read())
-        # val = binascii.unhexlify(val)
-        # val = struct.unpack('f', val)[0]
-        # print (str(val) + "************")
 
         try:
             ch = item
@@ -116,35 +111,8 @@ if __name__ == '__main__':
             print ("step three:",str(val))
         except:
             pass
-
-    for item in ble_conn.getDescriptors("BE9400017333BE46B7AE689E71722BD5"):
-        print("descriptors:",item)
-
-        try:
-            ch = item
-        except:
-            pass
-
-        try:
-            val = binascii.b2a_hex(ch.read())
-            print ("step one:",str(val))
-        except:
-            pass
-
-        try:
-            val = binascii.unhexlify(val)
-            print ("step two:",str(val))
-        except:
-            pass
-
-        try:
-            val = struct.unpack('f', val)[0]
-            print ("step three:",str(val))
-        except:
-            pass
-    # ble_conn.writeCharacteristic(handle, snd_content_str)
     # wait notification  
-    ble_conn.waitForNotifications(20.0)
+    ble_conn.waitForNotifications(10.0)
     
     # disconnect 
     ble_disconnect()
