@@ -61,7 +61,7 @@ if __name__ == '__main__':
     ble_connect(ble_mac)
     # write , set listen
     snd_content_str = """\\x01\\x00"""
-    for item in ble_conn.getServices():
+    for item in ble_conn.getServices("BE9400017333BE46B7AE689E71722BD5"):
         print("services:",item)
 
         try:
@@ -87,7 +87,7 @@ if __name__ == '__main__':
         except:
             pass
 
-    for item in ble_conn.getCharacteristics():
+    for item in ble_conn.getCharacteristics("BE9400017333BE46B7AE689E71722BD5"):
         print("characteristics:",item)
         # val = binascii.b2a_hex(ch.read())
         # val = binascii.unhexlify(val)
@@ -117,7 +117,7 @@ if __name__ == '__main__':
         except:
             pass
 
-    for item in ble_conn.getDescriptors():
+    for item in ble_conn.getDescriptors("BE9400017333BE46B7AE689E71722BD5"):
         print("descriptors:",item)
 
         try:
