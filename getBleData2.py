@@ -60,31 +60,32 @@ if __name__ == '__main__':
     # connect  
     ble_connect(ble_mac)
     # write , set listen
-    for item in ble_conn.getServiceByUUID( uuidVal = "BE9400017333BE46B7AE689E71722BD5"):
-        print("services:",item)
+    
+    # for item in ble_conn.getServiceByUUID( uuidVal = "BE9400017333BE46B7AE689E71722BD5"):
+    #     print("services:",item)
 
-        try:
-            ch = item
-        except:
-            pass
+    #     try:
+    #         ch = item
+    #     except:
+    #         pass
 
-        try:
-            val = binascii.b2a_hex(ch.read())
-            print ("step one:",str(val))
-        except:
-            pass
+    #     try:
+    #         val = binascii.b2a_hex(ch.read())
+    #         print ("step one:",str(val))
+    #     except:
+    #         pass
 
-        try:
-            val = binascii.unhexlify(val)
-            print ("step two:",str(val))
-        except:
-            pass
+    #     try:
+    #         val = binascii.unhexlify(val)
+    #         print ("step two:",str(val))
+    #     except:
+    #         pass
 
-        try:
-            val = struct.unpack('f', val)[0]
-            print ("step three:",str(val))
-        except:
-            pass
+    #     try:
+    #         val = struct.unpack('f', val)[0]
+    #         print ("step three:",str(val))
+    #     except:
+    #         pass
 
     for item in ble_conn.getCharacteristics(uuid = "BE9400017333BE46B7AE689E71722BD5"):
         print("characteristics:",item)
