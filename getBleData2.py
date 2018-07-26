@@ -61,7 +61,7 @@ if __name__ == '__main__':
     ble_connect(ble_mac)
     # write , set listen
 
-    for item in ble_conn.getServiceByUUID():
+    for item in ble_conn.getServices():
         print("services:",item)
 
     for item in ble_conn.getDescriptors():
