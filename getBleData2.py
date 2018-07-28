@@ -64,11 +64,14 @@ if __name__ == '__main__':
     for item in ble_conn.getServices():
         print("services:",item)
 
-    for item in ble_conn.getDescriptors():
+    for item in ble_conn.getDescriptors(uuid='fec7'):
         print("descriptors:",item)
 
     for item in ble_conn.getCharacteristics():
         print("characteristics:",item)
+
+
+    
 
 
     # wait notification  
