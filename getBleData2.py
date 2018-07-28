@@ -69,7 +69,7 @@ if __name__ == '__main__':
 
     # for item in ble_conn.getCharacteristics(startHnd=1, endHnd=0xFFFF,uuid='fee7'):
     #     print("characteristics:",item)
-    print(ble_conn.getCharacteristics(startHnd=50, endHnd=65535,uuid='fee7'))
+    print(ble_conn.getCharacteristics(startHnd=50, endHnd=65535,uuid='6e40fee7b5a3f393e0a9e50e24dcca9e'))
 
     
 
