@@ -61,15 +61,15 @@ if __name__ == '__main__':
     ble_connect(ble_mac)
     # write , set listen
 
-    for item in ble_conn.getServices():
-        print("services:",item)
+    # for item in ble_conn.getServices():
+    #     print("services:",item)
 
-    for item in ble_conn.getDescriptors():
-        print("descriptors:",item)
+    # for item in ble_conn.getDescriptors():
+    #     print("descriptors:",item)
 
     # for item in ble_conn.getCharacteristics(startHnd=1, endHnd=0xFFFF,uuid='fee7'):
     #     print("characteristics:",item)
-    print(ble_conn.getCharacteristics(startHnd=50, endHnd=65535,uuid='6e40fee7b5a3f393e0a9e50e24dcca9e'))
+    print(ble_conn.getCharacteristics(startHnd=50, endHnd=65535,uuid='0xfee7'))
 
     
 
