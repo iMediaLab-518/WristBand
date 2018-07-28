@@ -64,10 +64,10 @@ if __name__ == '__main__':
     for item in ble_conn.getServices():
         print("services:",item)
 
-    for item in ble_conn.getDescriptors(uuid='fec7'):
+    for item in ble_conn.getDescriptors():
         print("descriptors:",item)
 
-    for item in ble_conn.getCharacteristics():
+    for item in ble_conn.getCharacteristics(uuid='fec7'):
         print("characteristics:",item)
 
 
