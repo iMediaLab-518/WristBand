@@ -67,7 +67,7 @@ if __name__ == '__main__':
     for item in ble_conn.getDescriptors():
         print("descriptors:",item)
 
-    for item in ble_conn.getCharacteristics(uuid='fec7'):
+    for item in ble_conn.getCharacteristics(startHnd=1, endHnd=0xFFFF,uuid='fee7'):
         print("characteristics:",item)
 
 
