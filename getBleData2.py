@@ -70,7 +70,7 @@ if __name__ == '__main__':
     # for item in ble_conn.getCharacteristics(startHnd=1, endHnd=0xFFFF,uuid='fee7'):
     #     print("characteristics:",item)
     ch = ble_conn.getCharacteristics(uuid='6e400003-b5a3-f393-e0a9-e50e24dcca9e')
-    val = binascii.b2a_hex(ch.read())
+    val = binascii.b2a_hex(ch)
     print ("step one:",str(val))
     val = binascii.unhexlify(val)
     print ("step two:",str(val))
