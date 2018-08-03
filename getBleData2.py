@@ -71,7 +71,7 @@ if __name__ == '__main__':
     #     print("characteristics:",item)
     ch = ble_conn.getCharacteristics(uuid='6e400003-b5a3-f393-e0a9-e50e24dcca9e')
     
-    pirnt(ch)
+    print(ch)
 
     try:
         val = binascii.b2a_hex(ch.read())
