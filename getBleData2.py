@@ -69,7 +69,7 @@ if __name__ == '__main__':
 
     # for item in ble_conn.getCharacteristics():
     #     print("characteristics:",item)
-    ch = ble_conn.getCharacteristics(uuid='2a2b')
+    ch = ble_conn.getCharacteristics(uuid='2a19')
     
     print(ch)
 
