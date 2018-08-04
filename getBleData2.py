@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
 
 
-    ch = ble_conn.getCharacteristics(uuid='2a37')
+    ch = ble_conn.getCharacteristics(uuid='fee7')
     
     print(ch)
 
@@ -88,7 +88,7 @@ if __name__ == '__main__':
     # except:
     #     pass
     
-    for item in ble_conn.getCharacteristics(uuid='2a37'):
+    for item in ble_conn.getCharacteristics(uuid='fee7'):
         print("characteristics:",item)
 
     ch = item
