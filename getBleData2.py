@@ -69,23 +69,26 @@ if __name__ == '__main__':
 
     # for item in ble_conn.getCharacteristics():
     #     print("characteristics:",item)
-    ch = ble_conn.getCharacteristics(uuid='2a19')
-    
-    print(ch)
 
-    try:
-        val = binascii.b2a_hex(ch.read())
-        print ("step one:",str(val))
-    except:
-        pass
 
-    try:
-        val = binascii.unhexlify(val)
-        print ("step two:",str(val))
-    except:
-        pass
     
-    for item in ble_conn.getCharacteristics():
+    # ch = ble_conn.getCharacteristics(uuid='2a19')
+    
+    # print(ch)
+
+    # try:
+    #     val = binascii.b2a_hex(ch.read())
+    #     print ("step one:",str(val))
+    # except:
+    #     pass
+
+    # try:
+    #     val = binascii.unhexlify(val)
+    #     print ("step two:",str(val))
+    # except:
+    #     pass
+    
+    for item in ble_conn.getCharacteristics(uuid='2a19'):
         print("characteristics:",item)
 
     # wait notification  
