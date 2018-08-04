@@ -85,7 +85,8 @@ if __name__ == '__main__':
     except:
         pass
     
-
+    for item in ble_conn.getCharacteristics():
+        print("characteristics:",item)
 
     # wait notification  
     ble_conn.waitForNotifications(10.0)
