@@ -72,9 +72,9 @@ if __name__ == '__main__':
 
 
     
-    # ch = ble_conn.getCharacteristics(uuid='2a19')
+    ch = ble_conn.getCharacteristics(uuid='2a19')
     
-    # print(ch)
+    print(ch)
 
     # try:
     #     val = binascii.b2a_hex(ch.read())
