@@ -76,27 +76,29 @@ if __name__ == '__main__':
     
     print(ch)
 
-    # try:
-    #     val = binascii.b2a_hex(ch.read())
-    #     print ("step one:",str(val))
-    # except:
-    #     pass
+    try:
+        val = binascii.b2a_hex(ch.read())
+        print ("step one:",str(val))
+    except:
+        pass
 
-    # try:
-    #     val = binascii.unhexlify(val)
-    #     print ("step two:",str(val))
-    # except:
-    #     pass
+    try:
+        val = binascii.unhexlify(val)
+        print ("step two:",str(val))
+    except:
+        pass
+
+    print("---------------------------------------")
     
     for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
         print("characteristics:",item)
 
         ch = item
-
+        print(ch)
         print(ch.read())
         # print(ch.getHandle())
         # print(binascii.b2a_hex(ch))
-        
+
         # snd_content_str = """\\x01\\x00"""
         # ble_conn.writeCharacteristic(39, snd_content_str)
 
