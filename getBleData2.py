@@ -114,9 +114,9 @@ if __name__ == '__main__':
             except:
                 pass
 
-
-        Q = input()
-        if Q.lower() == 'q':
+                
+        k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
+        if k == 27:
             break
 
     # wait notification  
