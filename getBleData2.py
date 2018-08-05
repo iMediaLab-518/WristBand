@@ -7,6 +7,7 @@ import binascii
 from bluepy import btle
 import os
 import struct
+import cv2
 
 ble_conn = None
 
@@ -114,7 +115,7 @@ if __name__ == '__main__':
             except:
                 pass
 
-                
+
         k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
         if k == 27:
             break
