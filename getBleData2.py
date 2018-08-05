@@ -70,37 +70,11 @@ if __name__ == '__main__':
     # for item in ble_conn.getCharacteristics():
     #     print("characteristics:",item)
 
+    while(True):
 
-
-    ch = ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5')
-    
-    print(ch)
-
-    try:
-        val = binascii.b2a_hex(ch.read())
-        print ("step one:",str(val))
-    except:
-        pass
-
-    try:
-        val = binascii.unhexlify(val)
-        print ("step two:",str(val))
-    except:
-        pass
-
-    print("---------------------------------------")
-    
-    for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
-        print("characteristics:",item)
-
-        ch = item
+        ch = ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5')
+        
         print(ch)
-        print(ch.read())
-        # print(ch.getHandle())
-        # print(binascii.b2a_hex(ch))
-
-        # snd_content_str = """\\x01\\x00"""
-        # ble_conn.writeCharacteristic(39, snd_content_str)
 
         try:
             val = binascii.b2a_hex(ch.read())
@@ -114,8 +88,39 @@ if __name__ == '__main__':
         except:
             pass
 
+        print("---------------------------------------")
+        
+        for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
+            print("characteristics:",item)
+
+            ch = item
+            print(ch)
+            print(ch.read())
+            # print(ch.getHandle())
+            # print(binascii.b2a_hex(ch))
+
+            # snd_content_str = """\\x01\\x00"""
+            # ble_conn.writeCharacteristic(39, snd_content_str)
+
+            try:
+                val = binascii.b2a_hex(ch.read())
+                print ("step one:",str(val))
+            except:
+                pass
+
+            try:
+                val = binascii.unhexlify(val)
+                print ("step two:",str(val))
+            except:
+                pass
+
+
+        Q = input()
+        if Q.lower() == 'q':
+            break
+
     # wait notification  
-    ble_conn.waitForNotifications(10.0)
+    # ble_conn.waitForNotifications(10.0)
     
     # disconnect 
     ble_disconnect()
