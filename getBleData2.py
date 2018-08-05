@@ -95,7 +95,7 @@ if __name__ == '__main__':
 
     print(ch)
     # print(ch.getHandle())
-    print(str(ch.read()))
+    print(binascii.b2a_hex(ch))
 
     try:
         val = binascii.b2a_hex(ch.read())
