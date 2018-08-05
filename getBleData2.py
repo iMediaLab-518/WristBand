@@ -94,9 +94,11 @@ if __name__ == '__main__':
     ch = item
 
     print(ch)
+    print(ch.getHandle())
 
     try:
         val = binascii.b2a_hex(ch.read())
+        print(val);
         print ("step one:",str(val))
     except:
         pass
