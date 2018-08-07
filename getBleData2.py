@@ -115,7 +115,7 @@ if __name__ == '__main__':
             except:
                 pass
 
-        ble_conn.waitForNotifications(2.0)
+        # ble_conn.waitForNotifications(2.0)
         
         k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
         if k == 27:
