@@ -96,12 +96,12 @@ if __name__ == '__main__':
 
             ch = item
             print(ch)
-            print(ch.read())
+            # print(ch.read())
             # print(ch.getHandle())
             # print(binascii.b2a_hex(ch))
 
-            # snd_content_str = """\\x01\\x00"""
-            # ble_conn.writeCharacteristic(39, snd_content_str)
+            snd_content_str = """\\x01\\x00"""
+            ble_conn.writeCharacteristic(39, snd_content_str)
 
             try:
                 val = binascii.b2a_hex(ch.read())
@@ -115,13 +115,14 @@ if __name__ == '__main__':
             except:
                 pass
 
-
+        ble_conn.waitForNotifications(2.0)
+        
         k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
         if k == 27:
             break
 
     # wait notification  
-    # ble_conn.waitForNotifications(10.0)
+
     
     # disconnect 
     ble_disconnect()
