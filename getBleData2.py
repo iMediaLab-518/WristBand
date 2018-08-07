@@ -71,11 +71,19 @@ if __name__ == '__main__':
     # for item in ble_conn.getCharacteristics():
     #     print("characteristics:",item)
 
-    while(True):
-
-        ch = ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5')
+    # while(True):
         
+    for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
+        print("characteristics:",item)
+
+        ch = item
         print(ch)
+        # print(ch.read())
+        # print(ch.getHandle())
+        # print(binascii.b2a_hex(ch))
+
+        snd_content_str = """\\x05\\x01"""
+        ble_conn.writeCharacteristic(ch.getHandle(), snd_content_str)
 
         try:
             val = binascii.b2a_hex(ch.read())
@@ -89,37 +97,7 @@ if __name__ == '__main__':
         except:
             pass
 
-        print("---------------------------------------")
-        
-        for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
-            print("characteristics:",item)
-
-            ch = item
-            print(ch)
-            # print(ch.read())
-            # print(ch.getHandle())
-            # print(binascii.b2a_hex(ch))
-
-            # snd_content_str = """\\x01\\x00"""
-            # ble_conn.writeCharacteristic(39, snd_content_str)
-
-            try:
-                val = binascii.b2a_hex(ch.read())
-                print ("step one:",str(val))
-            except:
-                pass
-
-            try:
-                val = binascii.unhexlify(val)
-                print ("step two:",str(val))
-            except:
-                pass
-
-        # ble_conn.waitForNotifications(2.0)
-        
-        k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
-        if k == 27:
-            break
+    ble_conn.waitForNotifications(10.0)
 
     # wait notification  
 
