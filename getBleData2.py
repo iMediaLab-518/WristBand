@@ -78,26 +78,26 @@ if __name__ == '__main__':
     ble_conn.writeCharacteristic(37, snd_content_str)
 
 
-    for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
-        print("characteristics:",item)
+    # for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
+    #     print("characteristics:",item)
 
-        ch = item
-        print(ch)
-        # print(ch.read())
-        # print(ch.getHandle())
-        # print(binascii.b2a_hex(ch))
+    #     ch = item
+    #     print(ch)
+    #     # print(ch.read())
+    #     # print(ch.getHandle())
+    #     # print(binascii.b2a_hex(ch))
 
-        try:
-            val = binascii.b2a_hex(ch.read())
-            print ("step one:",str(val))
-        except:
-            pass
+    #     try:
+    #         val = binascii.b2a_hex(ch.read())
+    #         print ("step one:",str(val))
+    #     except:
+    #         pass
 
-        try:
-            val = binascii.unhexlify(val)
-            print ("step two:",str(val))
-        except:
-            pass
+    #     try:
+    #         val = binascii.unhexlify(val)
+    #         print ("step two:",str(val))
+    #     except:
+    #         pass
 
     ble_conn.waitForNotifications(10.0)
 
