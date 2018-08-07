@@ -75,7 +75,7 @@ if __name__ == '__main__':
         
 
     snd_content_str = """\\x05\\x01"""
-    ble_conn.writeCharacteristic(39, snd_content_str)
+    ble_conn.writeCharacteristic(37, snd_content_str)
 
 
     for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
