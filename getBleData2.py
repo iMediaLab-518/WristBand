@@ -100,8 +100,8 @@ if __name__ == '__main__':
             # print(ch.getHandle())
             # print(binascii.b2a_hex(ch))
 
-            snd_content_str = """\\x01\\x00"""
-            ble_conn.writeCharacteristic(39, snd_content_str)
+            # snd_content_str = """\\x01\\x00"""
+            # ble_conn.writeCharacteristic(39, snd_content_str)
 
             try:
                 val = binascii.b2a_hex(ch.read())
