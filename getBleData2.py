@@ -73,6 +73,11 @@ if __name__ == '__main__':
 
     # while(True):
         
+
+    snd_content_str = """\\x05\\x01"""
+    ble_conn.writeCharacteristic(btle.getHandle(), snd_content_str)
+
+
     for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
         print("characteristics:",item)
 
@@ -81,9 +86,6 @@ if __name__ == '__main__':
         # print(ch.read())
         # print(ch.getHandle())
         # print(binascii.b2a_hex(ch))
-
-        snd_content_str = """\\x05\\x01"""
-        ble_conn.writeCharacteristic(ch.getHandle(), snd_content_str)
 
         try:
             val = binascii.b2a_hex(ch.read())
