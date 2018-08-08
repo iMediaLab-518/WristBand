@@ -81,7 +81,8 @@ if __name__ == '__main__':
         print("characteristics:",item)
 
 
-
+        ch = item
+        
         # snd_content_str = "0x0506"
         # tmp = ble_conn.writeCharacteristic(ch.getHandle(), snd_content_str)
 
