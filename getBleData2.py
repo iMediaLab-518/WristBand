@@ -82,7 +82,7 @@ if __name__ == '__main__':
 
 
         ch = item
-        print("tmp-frist: ",tmp)
+        print("ch-frist: ",ch)
 
         snd_content_str = "0x0506"
         tmp = ble_conn.writeCharacteristic(ch.getHandle(), snd_content_str)
