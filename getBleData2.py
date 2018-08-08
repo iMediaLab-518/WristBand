@@ -80,11 +80,16 @@ if __name__ == '__main__':
     for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
         print("characteristics:",item)
 
-        snd_content_str = "0x0506"
-        ble_conn.writeCharacteristic(ch.getHandle(), snd_content_str)
 
         ch = item
         print(ch)
+
+        snd_content_str = "0x0506"
+        tmp = ble_conn.writeCharacteristic(ch.getHandle(), snd_content_str)
+
+        print("tmp: ",tmp)
+        
+        print("ch: ",ch)
         # print(ch.read())
         # print(ch.getHandle())
         # print(binascii.b2a_hex(ch))
