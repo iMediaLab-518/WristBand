@@ -81,13 +81,11 @@ if __name__ == '__main__':
         print("characteristics:",item)
 
 
-        ch = item
-        print("ch-frist: ",ch)
 
-        snd_content_str = "0x0506"
-        tmp = ble_conn.writeCharacteristic(ch.getHandle(), snd_content_str)
+        # snd_content_str = "0x0506"
+        # tmp = ble_conn.writeCharacteristic(ch.getHandle(), snd_content_str)
 
-        print("tmp: ",tmp)
+        # print("tmp: ",tmp)
         
         print("ch: ",ch)
         # print(ch.read())
@@ -106,10 +104,10 @@ if __name__ == '__main__':
         except:
             pass
 
-    ble_conn.waitForNotifications(10.0)
+
 
     # wait notification  
-
+    # ble_conn.waitForNotifications(10.0)
     
     # disconnect 
     ble_disconnect()
