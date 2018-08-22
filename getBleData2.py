@@ -77,7 +77,7 @@ if __name__ == '__main__':
 
 
 
-    for item in ble_conn.getCharacteristics(uuid='BE940002-7333-BE46-B7AE-689E71722BD5'):
+    for item in ble_conn.getCharacteristics(uuid='BE940000-7333-BE46-B7AE-689E71722BD5'):
         print("characteristics:",item)
 
 
