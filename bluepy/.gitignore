@@ -1,4 +1,16 @@
-bluepy-helper
+.DS_Store
 *.pyc
-*.o
-
+__pycache__
+bluepy/*.o
+#bluepy/bluepy-helper
+# eclipse project related files
+.settings/
+.cproject
+.project
+# cygwin modified files
+bluez-5.4/src/bluetoothd
+bluez-5.4/attrib/gatttool
+*.swp
+/build
+/bluepy.egg-info
+/dist
