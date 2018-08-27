@@ -85,7 +85,7 @@ if __name__ == '__main__':
 
         ch = item
 
-        snd_content_str = 0x05060700010007
+        snd_content_str = b"0x05060700010007"
         tmp = ble_conn.writeCharacteristic(ch.getHandle(), snd_content_str)
 
 
