@@ -67,8 +67,8 @@ if __name__ == '__main__':
     for item in ble_conn.getServices():
         # print("services:",item.uuid)
         if item.uuid == "be940000-7333-be46-b7ae-689e71722bd5":
-            print(item.uuid)
-            item.getCharacteristics("be940001-7333-be46-b7ae-689e71722bd5")
+            # print(item.uuid)
+            print( item.getCharacteristics("be940001-7333-be46-b7ae-689e71722bd5") )
 
 
     # for item in ble_conn.getDescriptors():
