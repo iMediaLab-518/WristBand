@@ -72,21 +72,24 @@ if __name__ == '__main__':
 
                 ch = iitem
 
-                print(ch.read())
+                ans = ch.write(val = b"0x05060700010007")
 
-                print(ch.propertiesToString())
+                print(ans)
+                # print(ch.read())
 
-                try:
-                    val = binascii.b2a_hex(ch.read())
-                    print ("step one:",str(val))
-                except:
-                    pass
+                # print(ch.propertiesToString())
 
-                try:
-                    val = binascii.unhexlify(val)
-                    print ("step two:",str(val))
-                except:
-                    pass
+                # try:
+                #     val = binascii.b2a_hex(ch.read())
+                #     print ("step one:",str(val))
+                # except:
+                #     pass
+
+                # try:
+                #     val = binascii.unhexlify(val)
+                #     print ("step two:",str(val))
+                # except:
+                #     pass
 
 
     # for item in ble_conn.getDescriptors():
