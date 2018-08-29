@@ -76,7 +76,7 @@ if __name__ == '__main__':
 
                 # ch.peripheral.waitForNotifications(10.0)
 
-                ble_connect.writeCharacteristic(ch.valHandle, b"0x05060700010007", True)
+                ble_conn.writeCharacteristic(ch.valHandle, b"0x05060700010007", True)
                 ble_conn.waitForNotifications(10.0)
 
 
