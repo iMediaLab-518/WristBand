@@ -74,6 +74,8 @@ if __name__ == '__main__':
 
                 print(ch.read())
 
+                print(ch.propertiesToString())
+
                 try:
                     val = binascii.b2a_hex(ch.read())
                     print ("step one:",str(val))
