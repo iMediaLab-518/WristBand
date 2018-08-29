@@ -68,8 +68,8 @@ if __name__ == '__main__':
         # print("services:",item.uuid)
         if item.uuid == "be940000-7333-be46-b7ae-689e71722bd5":
             # print(item.uuid)
-            for iitem in item.getCharacteristics("be940001-7333-be46-b7ae-689e71722bd5")
-            
+            for iitem in item.getCharacteristics("be940001-7333-be46-b7ae-689e71722bd5"):
+
                 ch = iitem
 
                 print(ch.read())
