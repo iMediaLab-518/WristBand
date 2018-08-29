@@ -62,44 +62,31 @@ if __name__ == '__main__':
 
 
 
-
-
-
-
+   
+    # connect  
     ble_connect(ble_mac)
     # write , set listen
-    snd_content_str = b"0x05060700010007"
-    # ble_conn.writeCharacteristic(handle, snd_content_str)
-    ble_conn.writeCharacteristic(39, snd_content_str)
-    # print(handle)
-    # wait notification  
+
+    ch = ""
+
+    for item in ble_conn.getServices():
+        # print("services:",item.uuid)
+        if item.uuid == "be940000-7333-be46-b7ae-689e71722bd5":
+            # print(item.uuid)
+            for iitem in item.getCharacteristics("be940001-7333-be46-b7ae-689e71722bd5"):
+
+                ch = iitem
+
+                break
+
+                # ch.write(val = b"0x05060700010007",withResponse=True)
+
+                # ch.peripheral.waitForNotifications(10.0)
+
+    print(ch.valHandle)
+
+    ble_conn.writeCharacteristic(39, b"0x05060700010007",withResponse=True)
     ble_conn.waitForNotifications(2.0)
-
-   
-    # # connect  
-    # ble_connect(ble_mac)
-    # # write , set listen
-
-    # ch = ""
-
-    # for item in ble_conn.getServices():
-    #     # print("services:",item.uuid)
-    #     if item.uuid == "be940000-7333-be46-b7ae-689e71722bd5":
-    #         # print(item.uuid)
-    #         for iitem in item.getCharacteristics("be940001-7333-be46-b7ae-689e71722bd5"):
-
-    #             ch = iitem
-
-    #             break
-
-    #             # ch.write(val = b"0x05060700010007",withResponse=True)
-
-    #             # ch.peripheral.waitForNotifications(10.0)
-
-    # print(ch.valHandle)
-
-    # ble_conn.writeCharacteristic(39, b"0x05060700010007")
-    # ble_conn.waitForNotifications(2.0)
 
 
     # wait notification  
