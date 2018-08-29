@@ -64,8 +64,8 @@ if __name__ == '__main__':
     ble_connect(ble_mac)
     # write , set listen
 
-    # for item in ble_conn.getServices():
-    #     print("services:",item)
+    for item in ble_conn.getServices():
+        print("services:",item)
 
     # for item in ble_conn.getDescriptors():
     #     print("descriptors:",item)
@@ -79,37 +79,37 @@ if __name__ == '__main__':
 
 
 
-    for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
-        print("characteristics:",item)
+    # for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
+    #     print("characteristics:",item)
 
 
-        ch = item
+    #     ch = item
 
-        snd_content_str = b"0x05060700010007"
-        tmp = ble_conn.writeCharacteristic(ch.getHandle(), snd_content_str)
+    #     snd_content_str = b"0x05060700010007"
+    #     tmp = ble_conn.writeCharacteristic(ch.getHandle(), snd_content_str)
 
 
-        print(tmp)
+    #     print(tmp)
 
-        print("--------------")
-        # print("tmp: ",tmp)
+    #     print("--------------")
+    #     # print("tmp: ",tmp)
         
-        # print("ch: ",ch)
-        # print(ch.read())
-        print(ch.getHandle())
-        # print(binascii.b2a_hex(ch))
+    #     # print("ch: ",ch)
+    #     # print(ch.read())
+    #     print(ch.getHandle())
+    #     # print(binascii.b2a_hex(ch))
 
-        try:
-            val = binascii.b2a_hex(ch.read())
-            print ("step one:",str(val))
-        except:
-            pass
+    #     try:
+    #         val = binascii.b2a_hex(ch.read())
+    #         print ("step one:",str(val))
+    #     except:
+    #         pass
 
-        try:
-            val = binascii.unhexlify(val)
-            print ("step two:",str(val))
-        except:
-            pass
+    #     try:
+    #         val = binascii.unhexlify(val)
+    #         print ("step two:",str(val))
+    #     except:
+    #         pass
 
 
 
