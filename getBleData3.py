@@ -64,6 +64,8 @@ if __name__ == '__main__':
     ble_connect(ble_mac)
     # write , set listen
 
+    ch = ""
+    
     for item in ble_conn.getServices():
         # print("services:",item.uuid)
         if item.uuid == "be940000-7333-be46-b7ae-689e71722bd5":
@@ -72,12 +74,14 @@ if __name__ == '__main__':
 
                 ch = iitem
 
+                break
+
                 # ch.write(val = b"0x05060700010007",withResponse=True)
 
                 # ch.peripheral.waitForNotifications(10.0)
 
-                ble_conn.writeCharacteristic(ch.valHandle, b"0x05060700010007", True)
-                ble_conn.waitForNotifications(10.0)
+    ble_conn.writeCharacteristic(ch.valHandle, b"0x05060700010007", True)
+    ble_conn.waitForNotifications(10.0)
 
 
     # wait notification  
