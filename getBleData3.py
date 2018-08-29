@@ -74,11 +74,11 @@ if __name__ == '__main__':
 
                 ch.write(val = b"0x05060700010007",withResponse=True)
 
-                # ble_conn.waitForNotifications(10.0)
+                ch.peripheral.waitForNotifications(10.0)
 
 
     # wait notification  
-    ble_conn.waitForNotifications(10.0)
+    # ble_conn.waitForNotifications(10.0)
     
     # disconnect 
     ble_disconnect()
