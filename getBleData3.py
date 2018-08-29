@@ -65,7 +65,8 @@ if __name__ == '__main__':
     # write , set listen
 
     for item in ble_conn.getServices():
-        print("services:",item)
+        print("services:",item.uuid)
+
 
     # for item in ble_conn.getDescriptors():
     #     print("descriptors:",item)
