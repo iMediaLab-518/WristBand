@@ -72,7 +72,9 @@ if __name__ == '__main__':
 
                 ch = iitem
 
-                ans = ch.write(val = b"0x05060700010007",withResponse=True)
+                ch.write(val = b"0x05060700010007",withResponse=True)
+
+                ans = ch.read()
 
                 print(ans)
                 # print(ch.read())
