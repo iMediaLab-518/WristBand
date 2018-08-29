@@ -74,78 +74,11 @@ if __name__ == '__main__':
 
                 ch.write(val = b"0x05060700010007",withResponse=True)
 
-                ble_conn.waitForNotifications(10.0)
-                
-                # ans = ch.read()
-
-                # print(ans)
-
-
-                # print(ch.read())
-
-                # print(ch.propertiesToString())
-
-                # try:
-                #     val = binascii.b2a_hex(ch.read())
-                #     print ("step one:",str(val))
-                # except:
-                #     pass
-
-                # try:
-                #     val = binascii.unhexlify(val)
-                #     print ("step two:",str(val))
-                # except:
-                #     pass
-
-
-    # for item in ble_conn.getDescriptors():
-    #     print("descriptors:",item)
-
-    # for item in ble_conn.getCharacteristics():
-    #     print("characteristics:",item)
-
-    # while(True):
-        
-
-
-
-
-    # for item in ble_conn.getCharacteristics(uuid='BE940001-7333-BE46-B7AE-689E71722BD5'):
-    #     print("characteristics:",item)
-
-
-    #     ch = item
-
-    #     snd_content_str = b"0x05060700010007"
-    #     tmp = ble_conn.writeCharacteristic(ch.getHandle(), snd_content_str)
-
-
-    #     print(tmp)
-
-    #     print("--------------")
-    #     # print("tmp: ",tmp)
-        
-    #     # print("ch: ",ch)
-    #     # print(ch.read())
-    #     print(ch.getHandle())
-    #     # print(binascii.b2a_hex(ch))
-
-    #     try:
-    #         val = binascii.b2a_hex(ch.read())
-    #         print ("step one:",str(val))
-    #     except:
-    #         pass
-
-    #     try:
-    #         val = binascii.unhexlify(val)
-    #         print ("step two:",str(val))
-    #     except:
-    #         pass
-
+                # ble_conn.waitForNotifications(10.0)
 
 
     # wait notification  
-    # ble_conn.waitForNotifications(10.0)
+    ble_conn.waitForNotifications(10.0)
     
     # disconnect 
     ble_disconnect()
