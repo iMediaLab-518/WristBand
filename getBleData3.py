@@ -68,7 +68,21 @@ if __name__ == '__main__':
         # print("services:",item.uuid)
         if item.uuid == "be940000-7333-be46-b7ae-689e71722bd5":
             # print(item.uuid)
-            print( item.getCharacteristics("be940001-7333-be46-b7ae-689e71722bd5") )
+            ch = item.getCharacteristics("be940001-7333-be46-b7ae-689e71722bd5")
+
+            print(ch.read())
+            
+            try:
+                val = binascii.b2a_hex(ch.read())
+                print ("step one:",str(val))
+            except:
+                pass
+
+            try:
+                val = binascii.unhexlify(val)
+                print ("step two:",str(val))
+            except:
+                pass
 
 
     # for item in ble_conn.getDescriptors():
