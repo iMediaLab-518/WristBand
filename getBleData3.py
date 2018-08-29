@@ -72,9 +72,12 @@ if __name__ == '__main__':
 
                 ch = iitem
 
-                ch.write(val = b"0x05060700010007",withResponse=True)
+                # ch.write(val = b"0x05060700010007",withResponse=True)
 
-                ch.peripheral.waitForNotifications(10.0)
+                # ch.peripheral.waitForNotifications(10.0)
+
+                ble_connect.writeCharacteristic(ch.valHandle, b"0x05060700010007", True)
+                ble_conn.waitForNotifications(10.0)
 
 
     # wait notification  
