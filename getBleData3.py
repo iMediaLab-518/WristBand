@@ -99,10 +99,12 @@ if __name__ == '__main__':
     p = btle.Peripheral("cc:50:98:e9:2a:b9", "random")
     services=p.getServices()
     for service in services:
-       print service
+       print(service)
     s = p.getServiceByUUID("be940000-7333-be46-b7ae-689e71722bd5")
     c = s.getCharacteristics()[0]
+    print(c)
     c.write("e", "utf-8")
+    print(c)
     p.disconnect()
 
 
