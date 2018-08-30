@@ -103,7 +103,7 @@ if __name__ == '__main__':
     s = p.getServiceByUUID("be940000-7333-be46-b7ae-689e71722bd5")
     c = s.getCharacteristics()[0]
     print(c)
-    c.write("e", "utf-8")
+    c.write(b"0x05060700010007", "utf-8")
     print(c)
     p.disconnect()
 
