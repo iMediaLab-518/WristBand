@@ -47,70 +47,50 @@ def ble_disconnect():
 
 if __name__ == '__main__':
  
-    # ble_mac = "cc:50:98:e9:2a:b9"
+    ble_mac = "cc:50:98:e9:2a:b9"
    
-    # # scan 
-    # scanner = btle.Scanner().withDelegate(MyDelegate(None))
-    # timeout = 10.0
-    # devices = scanner.scan(timeout)
-    # for dev in devices:
-    #     if dev.addr == ble_mac:
-    #         print("\\nDiscovery:", "MAC:", dev.addr, " Rssi ", str(dev.rssi))
-    #         for (adtype, desc, value) in dev.getScanData():
-    #             print ("  %s(0x%x) = %s" % (desc, int(adtype), value))
-    #         break
+    # scan 
+    scanner = btle.Scanner().withDelegate(MyDelegate(None))
+    timeout = 10.0
+    devices = scanner.scan(timeout)
+    for dev in devices:
+        if dev.addr == ble_mac:
+            print("\\nDiscovery:", "MAC:", dev.addr, " Rssi ", str(dev.rssi))
+            for (adtype, desc, value) in dev.getScanData():
+                print ("  %s(0x%x) = %s" % (desc, int(adtype), value))
+            break
 
 
 
    
-    # # connect  
-    # ble_connect(ble_mac)
-    # # write , set listen
+    # connect  
+    ble_connect(ble_mac)
+    # write , set listen
 
-    # ch = ""
+    ch = ""
 
-    # for item in ble_conn.getServices():
-    #     # print("services:",item.uuid)
-    #     if item.uuid == "be940000-7333-be46-b7ae-689e71722bd5":
-    #         # print(item.uuid)
-    #         for iitem in item.getCharacteristics("be940001-7333-be46-b7ae-689e71722bd5"):
+    for item in ble_conn.getServices():
+        # print("services:",item.uuid)
+        if item.uuid == "be940000-7333-be46-b7ae-689e71722bd5":
+            # print(item.uuid)
+            for iitem in item.getCharacteristics("be940001-7333-be46-b7ae-689e71722bd5"):
 
-    #             ch = iitem
+                ch = iitem
 
-    #             break
+                break
 
-    #             # ch.write(val = b"0x05060700010007",withResponse=True)
+                # ch.write(val = b"0x05060700010007",withResponse=True)
 
-    #             # ch.peripheral.waitForNotifications(10.0)
+                # ch.peripheral.waitForNotifications(10.0)
 
     # print(ch.valHandle)
 
-    # ble_conn.writeCharacteristic(39, b"0x05060700010007",withResponse=True)
-    # ble_conn.waitForNotifications(2.0)
-
-
-    # wait notification  
-    # ble_conn.waitForNotifications(10.0)
-    
-    # disconnect 
-    # ble_disconnect()
-
-
-    p = btle.Peripheral("cc:50:98:e9:2a:b9", "random")
-    p.setDelegate( MyDelegate(None) )
-    services=p.getServices()
-    for service in services:
-       print(service)
-    s = p.getServiceByUUID("be940000-7333-be46-b7ae-689e71722bd5")
-    c = s.getCharacteristics()[0]
-    print(c)
-    c.write(b"0x05060700010007", "utf-8")
-    print(c)
-    
     i=0
+    
+    ble_conn.writeCharacteristic(39, b"0x05060700010007",withResponse=True)
 
     while(True):
-        if(p.waitForNotifications(1)):
+        if(ble_conn.waitForNotifications(1)):
             i=i+1
             if(i>1000):
                 break
@@ -118,6 +98,39 @@ if __name__ == '__main__':
         print("Waiting...")
     time.sleep(0.5)
 
-    p.disconnect()
+
+    # ble_conn.waitForNotifications(2.0)
+
+
+    # wait notification  
+    # ble_conn.waitForNotifications(10.0)
+    
+    # disconnect 
+    ble_disconnect()
+
+
+    # p = btle.Peripheral("cc:50:98:e9:2a:b9", "random")
+    # p.setDelegate( MyDelegate(None) )
+    # services=p.getServices()
+    # for service in services:
+    #    print(service)
+    # s = p.getServiceByUUID("be940000-7333-be46-b7ae-689e71722bd5")
+    # c = s.getCharacteristics()[0]
+    # print(c)
+    # c.write(b"0x05060700010007", "utf-8")
+    # print(c)
+
+    # i=0
+
+    # while(True):
+    #     if(p.waitForNotifications(1)):
+    #         i=i+1
+    #         if(i>1000):
+    #             break
+    #         continue
+    #     print("Waiting...")
+    # time.sleep(0.5)
+
+    # p.disconnect()
 
 
