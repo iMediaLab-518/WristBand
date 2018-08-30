@@ -96,13 +96,13 @@ if __name__ == '__main__':
     # # ble_disconnect()
 
 
-p = btle.Peripheral("00:0E:0B:00:75:12", "random")
-services=p.getServices()
-for service in services:
-   print service
-s = p.getServiceByUUID("be940000-7333-be46-b7ae-689e71722bd5")
-c = s.getCharacteristics()[0]
-c.write("e", "utf-8")
-p.disconnect()
+    p = btle.Peripheral("cc:50:98:e9:2a:b9", "random")
+    services=p.getServices()
+    for service in services:
+       print service
+    s = p.getServiceByUUID("be940000-7333-be46-b7ae-689e71722bd5")
+    c = s.getCharacteristics()[0]
+    c.write("e", "utf-8")
+    p.disconnect()
 
 
