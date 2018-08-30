@@ -89,14 +89,15 @@ if __name__ == '__main__':
     # ble_conn.waitForNotifications(2.0)
 
 
-    # # wait notification  
-    # # ble_conn.waitForNotifications(10.0)
+    # wait notification  
+    # ble_conn.waitForNotifications(10.0)
     
-    # # disconnect 
-    # # ble_disconnect()
+    # disconnect 
+    # ble_disconnect()
 
 
     p = btle.Peripheral("cc:50:98:e9:2a:b9", "random")
+    p.setDelegate( MyDelegate(None) )
     services=p.getServices()
     for service in services:
        print(service)
@@ -105,6 +106,18 @@ if __name__ == '__main__':
     print(c)
     c.write(b"0x05060700010007", "utf-8")
     print(c)
+    
+    i=0
+
+    while(True):
+        if(p.waitForNotifications(1)):
+            i=i+1
+            if(i>1000):
+                break
+            continue
+        print("Waiting...")
+    time.sleep(0.5)
+
     p.disconnect()
 
 
