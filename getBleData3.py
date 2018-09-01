@@ -86,8 +86,8 @@ if __name__ == '__main__':
     # print(ch.valHandle)
 
     i=0
-    
-    ble_conn.writeCharacteristic(39, b"0x05060700010007",withResponse=True)
+
+    ble_conn.writeCharacteristic(37, b"0x05060700010007",withResponse=True)
 
     while(True):
         if(ble_conn.waitForNotifications(1)):
