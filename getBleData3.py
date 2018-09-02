@@ -67,30 +67,29 @@ if __name__ == '__main__':
     ble_connect(ble_mac)
     # write , set listen
 
-    ch = ""
+    # ch = ""
 
-    for item in ble_conn.getServices():
-        # print("services:",item.uuid)
-        if item.uuid == "be940000-7333-be46-b7ae-689e71722bd5":
-            # print(item.uuid)
-            for iitem in item.getCharacteristics("be940001-7333-be46-b7ae-689e71722bd5"):
+    # for item in ble_conn.getServices():
+    #     # print("services:",item.uuid)
+    #     if item.uuid == "be940000-7333-be46-b7ae-689e71722bd5":
+    #         # print(item.uuid)
+    #         for iitem in item.getCharacteristics("be940001-7333-be46-b7ae-689e71722bd5"):
 
-                ch = iitem
+    #             ch = iitem
 
-                break
+    #             break
 
-                # ch.write(val = b"0x05060700010007",withResponse=True)
+    #             # ch.write(val = b"0x05060700010007",withResponse=True)
 
-                # ch.peripheral.waitForNotifications(10.0)
+    #             # ch.peripheral.waitForNotifications(10.0)
 
-    # print(ch.valHandle)
 
     i=0
 
     ble_conn.writeCharacteristic(39, b"0x05060700010007",withResponse=True)
 
     while(True):
-        if(ble_conn.waitForNotifications(1)):
+        if(ble_conn.waitForNotifications(2.0)):
             i=i+1
             if(i>1000):
                 break
