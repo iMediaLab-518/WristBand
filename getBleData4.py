@@ -28,7 +28,7 @@ class MyDelegate(btle.DefaultDelegate):
 def ble_connect(devAddr):
     global ble_conn
     if not devAddr is None and ble_conn is None:
-        ble_conn = btle.Peripheral(devAddr, btle.ADDR_TYPE_PUBLIC)
+        ble_conn = btle.Peripheral(devAddr, btle.ADDR_TYPE_RANDOM)
         ble_conn.setDelegate(MyDelegate(ble_conn))
         print("connected")
 
