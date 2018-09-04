@@ -56,7 +56,7 @@ if __name__ == '__main__':
     # connect  
     ble_connect(ble_mac)
     # write , set listen
-    snd_content_str = b"0x0506"
+    snd_content_str = None
     ble_conn.writeCharacteristic(39, snd_content_str)
     
     # wait notification  
